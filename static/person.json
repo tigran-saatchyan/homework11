@@ -1,0 +1,90 @@
+[
+  {
+    "id"      : 1,
+    "name"    : "Adela Hendricks",
+    "picture" : "https://placebeard.it/300/notag",
+    "position": "Go разработчик",
+    "gender"  : "female",
+    "age"     : 40,
+    "skills"  : "go, python",
+    "github"  : "https://github.com/tigran-saatchyan",
+    "bio"     : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+  },
+  {
+    "id"      : 2,
+    "name"    : "Sheri Torres",
+    "picture" : "https://placebeard.it/300/notag",
+    "position": "Delphi developer",
+    "gender"  : "female",
+    "age"     : 26,
+    "skills"  : "Delphi, pascal, fortran, basic",
+    "github"  : "https://github.com/tigran-saatchyan",
+    "bio"     : "Eos temporibus iste non blanditiis minima est consectetur voluptates est corrupti animi. Qui consequatur autem et repudiandae dicta ut cupiditate rerum in earum nulla."
+  },
+  {
+    "id"      : 3,
+    "name"    : "Burt Stein",
+    "picture" : "https://placebeard.it/300/notag",
+    "position": "Team lead",
+    "gender"  : "male",
+    "age"     : 33,
+    "skills"  : "делегирование, пользоваться календарем, обсуждать важные вопросы",
+    "github"  : "https://github.com/tigran-saatchyan",
+    "bio"     : "Hic dolores obcaecati eos tenetur consequatur ab numquam omnis. Eum aliquid temporibus aut cumque doloremque est error adipisci non iste maiores est rerum ipsam At reprehenderit impedit non consequuntur galisum!"
+  },
+  {
+    "id"      : 4,
+    "name"    : "Bauer Adkins",
+    "picture" : "https://placebeard.it/300/notag",
+    "position": "CTO",
+    "gender"  : "male",
+    "age"     : 37,
+    "skills"  : "very important face",
+    "github"  : "https://github.com/tigran-saatchyan",
+    "bio"     : "Qui rerum accusamus et cupiditate deserunt qui voluptatibus obcaecati et quia eaque et quia voluptatem. Vel sequi ipsa et nihil autem et omnis sapiente qui doloribus recusandae et nihil nemo."
+  },
+  {
+    "id"      : 5,
+    "name"    : "Day Holloway",
+    "picture" : "https://placebeard.it/300/notag",
+    "position": "HR manager",
+    "gender"  : "male",
+    "age"     : 35,
+    "skills"  : "LinkedIn, telegram, spam, spam, spam",
+    "github"  : "https://github.com/tigran-saatchyan",
+    "bio"     : "Rem esse veniam sed quam nisi aut galisum possimus in voluptatem accusantium ut quam culpa. Aut tempore laborum ut soluta temporibus et natus enim ut culpa quia!"
+  },
+  {
+    "id"      : 6,
+    "name"    : "Austin Cochran",
+    "picture" : "https://placebeard.it/300/notag",
+    "position": "python-develop",
+    "gender"  : "male",
+    "age"     : 26,
+    "skills"  : "python, html",
+    "github"  : "https://github.com/tigran-saatchyan",
+    "bio"     : "Ex voluptates saepe id iusto excepturi ex autem veritatis! Ut aspernatur error non nihil suscipit qui ullam porro ut doloribus esse vel cumque dignissimos aut corporis odio."
+  },
+  {
+    "id"      : 7,
+    "name"    : "Sheree Love",
+    "picture" : "https://placebeard.it/300/notag",
+    "position": "Django developer",
+    "gender"  : "female",
+    "age"     : 33,
+    "skills"  : "Python, Django, flask",
+    "github"  : "https://github.com/tigran-saatchyan",
+    "bio"     : "Hic praesentium inventore rem numquam tenetur ex quibusdam quam. Et optio voluptates sit incidunt facere et harum ipsam et rerum rerum est neque aspernatur id voluptas voluptatem."
+  },
+  {
+    "id"      : 8,
+    "name"    : "Harry Potter",
+    "picture" : "https://placebeard.it/300/notag",
+    "position": "Python developer",
+    "gender"  : "male",
+    "age"     : 35,
+    "skills"  : "Python, Flask, HTML, CSS, PyTest, PHP, Bootstrap, JavaScript, SQL, MariaDB",
+    "github"  : "https://github.com/tigran-saatchyan",
+    "bio"     : "Lorem ipsum dolor sit amet. Sit minima consequatur ut facere quod est exercitationem optio quo modi consequatur. Aut laudantium ducimus eum neque dicta ut dolores voluptas ex fugiat quae?"
+  }
+]
