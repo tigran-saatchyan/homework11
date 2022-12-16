@@ -5,7 +5,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Lesson 11. Homework</title>
+    <title>Search Result</title>
 
     <!-- CSS stylesheets import -->
     <link rel="stylesheet" type="text/css" href="/static/css/style.css">
@@ -28,6 +28,7 @@
     <hr>
     <h3>
         {&emsp;&emsp;
+        <a href="http://127.0.0.1:5000/">Back to Main Page</a>&emsp;&emsp;}-|-{&emsp;&emsp;
         <a href="http://127.0.0.1:5000/list/">List of all Santa Candidates</a>
         &emsp;&emsp;}
     </h3>
@@ -45,45 +46,24 @@
 
 <!-- Scrollable section start-->
 <section>
-    {% for candidate in data %}
-        <div class="container">
-            <div class="name">{{ candidate.name }}</div>
-            <hr>
-            <div class="center">
-                <div class="picture">
-                    <img src="{{ candidate.picture }}" alt="{{ candidate.name }}" style="width:100%">
-                    <div class="small-container"><p>{{ candidate.position }}</p></div>
-                </div>
-            </div>
-            <div class="table">
+    <div class="table">
+        {% for candidate in data %}
+            {% if candidate['name']%}
                 <div class="row">
-                    <span class="cell"><b>Gender: </b></span>
-                    <span class="cell">{{ candidate.gender.title() }}</span>
+                    <a href="http://127.0.0.1:5000/candidate/{{ candidate.id }}/">
+                        <div class="cell">{{ candidate.id }}</div>
+                        <div class="cell">{{ candidate.name }}</div>
+                    </a>
                 </div>
-
+            {% else %}
                 <div class="row">
-                    <span class="cell"><b>Age: </b></span>
-                    <span class="cell">{{ candidate.age }}</span>
+                    <a href="http://127.0.0.1:5000/list/">
+                        <div class="cell">{{ candidate.error }}</div>
+                    </a>
                 </div>
-
-                <div class="row">
-                    <span class="cell"><b>Skills: </b></span>
-                    <span class="cell">{{ candidate.skills.title() }}</span>
-                </div>
-
-                <div class="row">
-                    <span class="cell"><b>GitHub: </b></span>
-                    <span class="cell"><a href="{{ candidate.github }}">{{ candidate.name }}</a></span>
-                </div>
-
-                <div class="row">
-                    <span class="cell"><b>Bio: </b></span>
-                    <span class="cell">{{ candidate.bio }}</span>
-                </div>
-
-            </div>
-        </div>
-    {% endfor %}
+            {% endif %}
+        {% endfor %}
+    </div>
 </section>
 <!-- Scrollable section end-->
 

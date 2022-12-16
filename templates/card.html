@@ -1,11 +1,8 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Lesson 11. Homework</title>
+    <title>{{ data.name }}</title>
 
     <!-- CSS stylesheets import -->
     <link rel="stylesheet" type="text/css" href="/static/css/style.css">
@@ -28,6 +25,7 @@
     <hr>
     <h3>
         {&emsp;&emsp;
+        <a href="http://127.0.0.1:5000/">Back to Main Page</a>&emsp;&emsp;}-|-{&emsp;&emsp;
         <a href="http://127.0.0.1:5000/list/">List of all Santa Candidates</a>
         &emsp;&emsp;}
     </h3>
@@ -40,52 +38,49 @@
         </form>
     </div>
     <!-- Search bar start -->
+
 </header>
 <!-- Fixed Header end-->
 
-<!-- Scrollable section start-->
 <section>
-    {% for candidate in data %}
-        <div class="container">
-            <div class="name">{{ candidate.name }}</div>
-            <hr>
-            <div class="center">
-                <div class="picture">
-                    <img src="{{ candidate.picture }}" alt="{{ candidate.name }}" style="width:100%">
-                    <div class="small-container"><p>{{ candidate.position }}</p></div>
-                </div>
-            </div>
-            <div class="table">
-                <div class="row">
-                    <span class="cell"><b>Gender: </b></span>
-                    <span class="cell">{{ candidate.gender.title() }}</span>
-                </div>
-
-                <div class="row">
-                    <span class="cell"><b>Age: </b></span>
-                    <span class="cell">{{ candidate.age }}</span>
-                </div>
-
-                <div class="row">
-                    <span class="cell"><b>Skills: </b></span>
-                    <span class="cell">{{ candidate.skills.title() }}</span>
-                </div>
-
-                <div class="row">
-                    <span class="cell"><b>GitHub: </b></span>
-                    <span class="cell"><a href="{{ candidate.github }}">{{ candidate.name }}</a></span>
-                </div>
-
-                <div class="row">
-                    <span class="cell"><b>Bio: </b></span>
-                    <span class="cell">{{ candidate.bio }}</span>
-                </div>
-
+    <div class="container">
+        <div class="name">{{ data.name }}</div>
+        <hr>
+        <div class="center">
+            <div class="picture">
+                <img src="{{ data.picture }}" alt="{{ data.name }}" style="width:100%">
+                <div class="small-container"><p>{{ data.position }}</p></div>
             </div>
         </div>
-    {% endfor %}
+        <div class="table">
+            <div class="row">
+                <span class="cell"><b>Gender: </b></span>
+                <span class="cell">{{ data.gender.title() }}</span>
+            </div>
+
+            <div class="row">
+                <span class="cell"><b>Age: </b></span>
+                <span class="cell">{{ data.age }}</span>
+            </div>
+
+            <div class="row">
+                <span class="cell"><b>Skills: </b></span>
+                <span class="cell">{{ data.skills.title() }}</span>
+            </div>
+
+            <div class="row">
+                <span class="cell"><b>GitHub: </b></span>
+                <span class="cell"><a href="{{ data.github }}">{{ data.name }}</a></span>
+            </div>
+
+            <div class="row">
+                <span class="cell"><b>Bio: </b></span>
+                <span class="cell">{{ data.bio }}</span>
+            </div>
+
+        </div>
+    </div>
 </section>
-<!-- Scrollable section end-->
 
 <!-- Snowflakes fall without JS start -->
 <div class="snowflakes" aria-hidden="true">
@@ -135,5 +130,6 @@
     <div class="wave"></div>
 </div>
 <!-- Wave background end -->
+
 </body>
 </html>

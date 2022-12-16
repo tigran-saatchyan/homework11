@@ -24,6 +24,7 @@ header h3 {
     margin-top  : 20px;
     text-align  : center;
     font-size   : 30px;
+    color       : #d73636;
     font-family : 'Mountains of Christmas', cursive;
     text-shadow : 2px 2px 4px #000000;
 }
@@ -62,9 +63,7 @@ section {
     background    : #ffffff;
     border-bottom : 1px solid #cccccc;
     height        : auto;
-    margin-top    : 240px;
-    margin-left   : auto;
-    margin-right  : auto;
+    margin        : 240px auto 60px;
     border-radius : 20px
 }
 
@@ -126,4 +125,51 @@ div.container {
     margin           : 50px auto 60px;
     padding          : 20px;
     box-shadow       : 2px 2px 10px #000000;;
+}
+
+/* Search bar */
+header .search-container {
+    float      : right;
+    margin-top : -165px;
+}
+
+header input[type=text] {
+    padding    : 6px;
+    margin-top : 8px;
+    font-size  : 17px;
+    border     : none;
+}
+
+header .search-container button {
+    float        : right;
+    padding      : 6px 10px;
+    margin-top   : 8px;
+    margin-right : 16px;
+    background   : #dddddd;
+    font-size    : 17px;
+    border       : none;
+    cursor       : pointer;
+}
+
+header .search-container button:hover {
+    background : #cccccc;
+}
+
+@media screen and (max-width : 600px) {
+    .search-container {
+        float : none;
+    }
+
+    header a, header input[type=text], header .search-container button {
+        float      : none;
+        display    : block;
+        text-align : left;
+        width      : 100%;
+        margin     : 0;
+        padding    : 14px;
+    }
+
+    header input[type=text] {
+        border : 1px solid #cccccc;
+    }
 }
