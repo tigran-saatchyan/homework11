@@ -82,10 +82,8 @@ def get_skills_list():
     """
     skills = []
 
-    candidates = [
+    for candidate in ALL_CANDIDATES:
         skills.extend(candidate["skills"].lower().split(", "))
-        for candidate in ALL_CANDIDATES
-    ]
 
     unique_skill_list = sorted(list(set(skills)))
 
