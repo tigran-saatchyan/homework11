@@ -44,41 +44,56 @@
 
 <section>
     <div class="container">
-        <div class="name">{{ data.name }}</div>
-        <hr>
-        <div class="center">
-            <div class="picture">
-                <img src="{{ data.picture }}" alt="{{ data.name }}" style="width:100%">
-                <div class="small-container"><p>{{ data.position }}</p></div>
-            </div>
-        </div>
-        <div class="table">
-            <div class="row">
-                <span class="cell"><b>Gender: </b></span>
-                <span class="cell">{{ data.gender.title() }}</span>
+        {% if data.error %}
+            <div class="table">
+                <div class="row">
+                    <a href="http://127.0.0.1:5000/list/">
+                        <span class="cell">{{ data.error }}</span>
+                    </a>
+                </div>
             </div>
 
-            <div class="row">
-                <span class="cell"><b>Age: </b></span>
-                <span class="cell">{{ data.age }}</span>
+        {% else %}
+            <div class="name">{{ data.name }}</div>
+            <hr>
+            <div class="center">
+                <div class="picture">
+                    <img src="{{ data.picture }}" alt="{{ data.name }}" style="width:100%">
+                    <div class="small-container"><p>{{ data.position }}</p></div>
+                </div>
             </div>
+            <div class="table">
+                <div class="row">
+                    <span class="cell"><b>Id: </b></span>
+                    <span class="cell">{{ data.id }}</span>
+                </div>
 
-            <div class="row">
-                <span class="cell"><b>Skills: </b></span>
-                <span class="cell">{{ data.skills.title() }}</span>
+                <div class="row">
+                    <span class="cell"><b>Gender: </b></span>
+                    <span class="cell">{{ data.gender.title() }}</span>
+                </div>
+
+                <div class="row">
+                    <span class="cell"><b>Age: </b></span>
+                    <span class="cell">{{ data.age }}</span>
+                </div>
+
+                <div class="row">
+                    <span class="cell"><b>Skills: </b></span>
+                    <span class="cell">{{ data.skills.title() }}</span>
+                </div>
+
+                <div class="row">
+                    <span class="cell"><b>GitHub: </b></span>
+                    <span class="cell"><a href="{{ data.github }}">{{ data.name }}</a></span>
+                </div>
+
+                <div class="row">
+                    <span class="cell"><b>Bio: </b></span>
+                    <span class="cell">{{ data.bio }}</span>
+                </div>
             </div>
-
-            <div class="row">
-                <span class="cell"><b>GitHub: </b></span>
-                <span class="cell"><a href="{{ data.github }}">{{ data.name }}</a></span>
-            </div>
-
-            <div class="row">
-                <span class="cell"><b>Bio: </b></span>
-                <span class="cell">{{ data.bio }}</span>
-            </div>
-
-        </div>
+        {% endif %}
     </div>
 </section>
 

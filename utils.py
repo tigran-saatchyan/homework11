@@ -13,10 +13,6 @@ def load_candidates_from_json(path):
 ALL_CANDIDATES = load_candidates_from_json(PATH)
 
 
-def list_of_candidates():
-    return
-
-
 def get_candidate(candidate_id):
     result = []
     for candidate in ALL_CANDIDATES:
@@ -24,8 +20,7 @@ def get_candidate(candidate_id):
             result = candidate
 
     if not result:
-        result.append({"error": f"Candidate #{candidate_id} is missing"})
-
+        result = {"error": f"Candidate #{candidate_id} is missing"}
     return result
 
 

@@ -23,26 +23,29 @@
 </head>
 <body>
 <!-- Fixed Header start-->
-<header>
-    <h1>Ho-Ho-Homework</h1>
-    <hr>
-    <h3>
-        {&emsp;&emsp;
-        <a href="http://127.0.0.1:5000/list/">List of all Santa Candidates</a>
-        &emsp;&emsp;}
-    </h3>
+<div class="center">
+    <header>
 
-    <!-- Search bar start -->
-    <div class="search-container">
-        <form action="/search_result/" method="post">
-            <input id="search" type="text" placeholder="Name.." name="search">
-            <button type="submit"><i class="fa fa-search"></i></button>
-        </form>
-    </div>
-    <!-- Search bar start -->
-</header>
-<!-- Fixed Header end-->
+        <h1>Ho-Ho-Homework</h1>
+        <hr>
+        <h3>
+            {&emsp;&emsp;
+            <a href="http://127.0.0.1:5000/list/">List of all Santa Candidates</a>
+            &emsp;&emsp;}
+        </h3>
 
+        <!-- Search bar start -->
+        <div class="search-container">
+            <form action="/search_result/" method="post">
+                <input id="search" type="text" placeholder="Name.." name="search">
+                <button type="submit"><i class="fa fa-search"></i></button>
+            </form>
+        </div>
+        <!-- Search bar start -->
+
+    </header>
+    <!-- Fixed Header end-->
+</div>
 <!-- Scrollable section start-->
 <section>
     {% for candidate in data %}

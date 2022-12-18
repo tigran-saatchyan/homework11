@@ -1,0 +1,90 @@
+[
+  {
+    "id"      : 1,
+    "name"    : "Harry Potter",
+    "picture" : "https://assets1.ignimgs.com/2020/01/17/guns-akimbo---button-03-1579286599310.jpg?width=400",
+    "position": "The Boy Who Lived",
+    "gender"  : "male",
+    "age"     : 33,
+    "skills"  : "Expelliarmus, Expecto Patronum, Riddikulus, Accio, Sectumsempra, Lumos",
+    "github"  : "https://github.com/tigran-saatchyan",
+    "bio"     : "Harry Potter is a wizard, the only child of James and Lily Potter. He is famous for having survived an attack by Lord Voldemort when he was a baby. He is also sometimes known as 'The Boy Who Lived'. For the first eleven years of his life Harry lives with his mean aunt and uncle and is unaware of his wizarding roots."
+  },
+  {
+    "id"      : 2,
+    "name"    : "Adela Hendricks",
+    "picture" : "https://placebeard.it/300/notag",
+    "position": "Go разработчик",
+    "gender"  : "female",
+    "age"     : 40,
+    "skills"  : "go, python",
+    "github"  : "https://github.com/tigran-saatchyan",
+    "bio"     : "\"Well, I think Harry's got it now, anyway,\" said Hermione hastily. \"And we don't have to worry about Disarming, because he's been able to do that for ages. ... I think we ought to start on some of these hexes this evening.\" She looked down the list they had made in the library."
+  },
+  {
+    "id"      : 3,
+    "name"    : "Sheri Torres",
+    "picture" : "https://placebeard.it/300/notag",
+    "position": "Delphi developer",
+    "gender"  : "female",
+    "age"     : 26,
+    "skills"  : "Delphi, pascal, fortran, basic",
+    "github"  : "https://github.com/tigran-saatchyan",
+    "bio"     : "\"What is it?\" Harry asked shakily. \"This? It is called a Pensieve,\" said Dumbledore. \"I sometimes find, and I am sure you know the feeling, that I simply have too many thoughts and memories crammed into my mind.\""
+  },
+  {
+    "id"      : 4,
+    "name"    : "Burt Stein",
+    "picture" : "https://placebeard.it/300/notag",
+    "position": "Team lead",
+    "gender"  : "male",
+    "age"     : 33,
+    "skills"  : "делегирование, пользоваться календарем, обсуждать важные вопросы",
+    "github"  : "https://github.com/tigran-saatchyan",
+    "bio"     : "\"What d'you mean, 'we all hate Hagrid'?\" Harry spat at Malfoy. \"What's this rubbish about him\" - he pointed at Crabbe - \"getting a bad bite off a flobberworm? They haven't even got teeth!\" Crabbe was sniggering, apparently very pleased with himself."
+  },
+  {
+    "id"      : 5,
+    "name"    : "Bauer Adkins",
+    "picture" : "https://placebeard.it/300/notag",
+    "position": "CTO",
+    "gender"  : "male",
+    "age"     : 37,
+    "skills"  : "very important face",
+    "github"  : "https://github.com/tigran-saatchyan",
+    "bio"     : "Dear Sirius, You told me to keep you posted on what's happening at Hogwarts, so here goes - I don't know if you've heard, but the Triwizard Tournament's happening this year and on Saturday night I got picked as a fourth champion. I don't who put my name in the Goblet of Fire, because I didn't. The other Hogwarts champion is Cedric Diggory, from Hufflepuff"
+  },
+  {
+    "id"      : 6,
+    "name"    : "Sheree Holloway",
+    "picture" : "https://placebeard.it/300/notag",
+    "position": "HR manager",
+    "gender"  : "male",
+    "age"     : 35,
+    "skills"  : "LinkedIn, telegram, spam, spam, spam",
+    "github"  : "https://github.com/tigran-saatchyan",
+    "bio"     : "\"I'd better hurry - you have a good term, boys, said Mr. Weasley to Harry, Ron, and the twins, fastening a cloak over his shoulders and preparing to Disapparate. \"Molly, are you going to be all right taking the kids to King's Cross?\" \"Of course I will,\" she said. \"You just look after Mad-Eye, we'll be fine.\""
+  },
+  {
+    "id"      : 7,
+    "name"    : "Austin Cochran",
+    "picture" : "https://placebeard.it/300/notag",
+    "position": "python-develop",
+    "gender"  : "male",
+    "age"     : 26,
+    "skills"  : "python, html",
+    "github"  : "https://github.com/tigran-saatchyan",
+    "bio"     : "\"What?\" said Ron, his eyes widening, his next cushion spinning high into the air, ricocheting off the chandelier, and dropping heavily onto Flitwick's desk. \"Harry... maybe Moody thinks Snape put your name in the Goblet of Fire!\" \"Oh Ron,\" said Hermione, shaking her head sceptically, \"we thought Snape was trying to kill Harry before, and it turned out he was saving Harry's life, remember?\""
+  },
+  {
+    "id"      : 8,
+    "name"    : "Sheree Love",
+    "picture" : "https://placebeard.it/300/notag",
+    "position": "Django developer",
+    "gender"  : "female",
+    "age"     : 33,
+    "skills"  : "Python, Django, flask",
+    "github"  : "https://github.com/tigran-saatchyan",
+    "bio"     : "\"You wait,\" he said, grinning. \"You jus' wait. Yer going ter see some stuff yeh've never seen before. Firs' task. . . ah, but I'm not supposed ter say.\" \"Go on, Hagrid!\" Harry, Ron, and Hermione urged him, but he just shook his head, grinning."
+  }
+]
