@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>List of Candidates</title>
+    <title>Skills List</title>
 
     <!-- CSS stylesheets import -->
     <link rel="stylesheet" type="text/css" href="/static/css/style.css">
@@ -25,7 +25,8 @@
     <hr>
     <h3>
         {&emsp;&emsp;
-        <a href="http://127.0.0.1:5000/">Back to Main Page</a>
+        <a href="http://127.0.0.1:5000/">Back to Main Page</a>&emsp;&emsp;}-|-{&emsp;&emsp;
+        <a href="http://127.0.0.1:5000/candidate_list/">List of all Santa Candidates</a>
         &emsp;&emsp;}
     </h3>
 
@@ -43,11 +44,10 @@
 <!-- Scrollable section start-->
 <section>
     <div class="table">
-        {% for id, candidate in data.items() %}
+        {% for skill in data %}
             <div class="row">
-                <a href="http://127.0.0.1:5000/candidate/{{ id }}/">
-                    <div class="cell">{{ id }}</div>
-                    <div class="cell">{{ candidate }}</div>
+                <a href="http://127.0.0.1:5000/candidates/{{ skill }}">
+                    <div class="cell">{{ skill.title() }}</div>
                 </a>
             </div>
         {% endfor %}

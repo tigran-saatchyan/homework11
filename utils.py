@@ -1,7 +1,7 @@
 import json
 import os
 
-PATH = os.path.join("static", "person.json")
+PATH = os.path.join("data", "person.json")
 
 
 def load_candidates_from_json(path):
@@ -27,7 +27,7 @@ def get_candidate(candidate_id):
 def get_candidates_by_name(candidate_name):
     filter_by_name = []
     for candidate in ALL_CANDIDATES:
-        if candidate_name.lower().strip() in candidate["name"].lower().split():
+        if candidate_name.lower().strip() in candidate["name"].lower():
             filter_by_name.append(candidate)
 
     if not filter_by_name:
@@ -42,9 +42,8 @@ def get_candidates_by_name(candidate_name):
 def get_candidates_by_skill(skill_name):
     filter_by_skill = []
     for candidate in ALL_CANDIDATES:
-        if skill_name.lower().strip() in candidate["skills"].lower().split():
-            print(skill_name.lower())
-            print(candidate["skills"].lower().split())
+        candidate_skills = candidate["skills"].lower().split(", ")
+        if skill_name.lower().strip() in candidate_skills:
             filter_by_skill.append(candidate)
 
     if not filter_by_skill:
@@ -54,3 +53,6 @@ def get_candidates_by_skill(skill_name):
             }
         )
     return filter_by_skill
+
+
+get_candidates_by_skill('python')

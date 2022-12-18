@@ -29,14 +29,15 @@
     <h3>
         {&emsp;&emsp;
         <a href="http://127.0.0.1:5000/">Back to Main Page</a>&emsp;&emsp;}-|-{&emsp;&emsp;
-        <a href="http://127.0.0.1:5000/list/">List of all Santa Candidates</a>
+        <a href="http://127.0.0.1:5000/candidate_list/">List of all Santa Candidates</a>&emsp;&emsp;}-|-{&emsp;&emsp;
+        <a href="http://127.0.0.1:5000/skill_list/">List of all Skills</a>
         &emsp;&emsp;}
     </h3>
 
     <!-- Search bar start -->
     <div class="search-container">
         <form action="/search_result/" method="post">
-            <input id="search" type="text" placeholder="Name.." name="search">
+            <input id="search" type="text" placeholder="Name or Skill" name="search">
             <button type="submit"><i class="fa fa-search"></i></button>
         </form>
     </div>
@@ -48,7 +49,7 @@
 <section>
     <div class="table">
         {% for candidate in data %}
-            {% if candidate['name']%}
+            {% if candidate['name'] %}
                 <div class="row">
                     <a href="http://127.0.0.1:5000/candidate/{{ candidate.id }}/">
                         <div class="cell">{{ candidate.id }}</div>
