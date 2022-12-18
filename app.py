@@ -6,16 +6,27 @@ import utils
 from utils import ALL_CANDIDATES
 
 app = Flask(__name__)
+
+# secret_key generation for flask session
+# to get access to POST and GET methods
 app.config['SECRET_KEY'] = os.urandom(24).hex()
 
 
 @app.route('/')
 def page_index():
+    """
+    Index page wit all candidates cards
+    :return:  - render_template('index.html', data=ALL_CANDIDATES)
+    """
     return render_template('index.html', data=ALL_CANDIDATES)
 
 
 @app.route('/candidate_list/')
 def page_list():
+    """
+    All candidate list page
+    :return: - render_template('candidate_list.html', data=candidates)
+    """
     candidates = {
         candidate["id"]: candidate["name"]
         for candidate in ALL_CANDIDATES
@@ -26,26 +37,46 @@ def page_list():
 
 @app.route('/skill_list/')
 def page_skill_list():
+    """
+    All skills list page
+    :return: - render_template('skill_list.html', data=skill_list)
+    """
     skill_list = utils.get_skills_list()
     return render_template('skill_list.html', data=skill_list)
 
 
 @app.route('/candidate/<int:candidate_id>/')
 def page_candidate_by_id(candidate_id):
+    """
+    Candidate personal page/card by id
+    :param      - candidate_id: - candidate id
+    :return:    - render_template("card.html", data=candidate)
+    """
     candidate = utils.get_candidate(candidate_id)
     return render_template("card.html", data=candidate)
 
 
 @app.route('/candidates/<skill_name>/')
 def page_candidate_by_skill(skill_name):
+    """
+    All candidate list with specified skill name
+    :param skill_name:  - specified skill name
+    :return: - render_template("search_result.html", data=candidates)
+    """
     candidates = utils.get_candidates_by_skill(skill_name)
     return render_template("search_result.html", data=candidates)
 
 
-@app.route('/search_result/', methods=['POST', 'GET'])
+@app.route('/search_result/', methods=['POST'])
 def page_search_result():
+    """
+    Search result page
+    :return: render_template("search_result.html", data=candidates)
+    """
     skill_list = utils.get_skills_list()
+
     candidate_name_or_skill = None
+
     if request.method == 'POST':
         candidate_name_or_skill = request.form['search']
 

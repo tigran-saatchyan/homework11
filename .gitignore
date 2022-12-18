@@ -1,3 +1,8 @@
+# virtual environment ignored
 venv/
+
+# JetBrains .idea folder
 .idea
+
+# Cached files
 __pycache__/

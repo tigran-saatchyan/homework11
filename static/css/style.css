@@ -20,6 +20,7 @@ header h1 {
     text-shadow   : 2px 2px 4px #000000;
 }
 
+/* Header menu text */
 header h3 {
     margin-top  : 20px;
     text-align  : center;
@@ -29,11 +30,13 @@ header h3 {
     text-shadow : 2px 2px 4px #000000;
 }
 
+/* Header horizontal ruler styling */
 header hr {
     border-top : 3px dashed red;
     width      : 40%;
 }
 
+/* Link styling */
 a {
     outline         : none;
     text-decoration : none;
@@ -93,7 +96,7 @@ section {
     text-align : center;
 }
 
-/* card */
+/* card picture*/
 div.picture {
     margin-left  : auto;
     margin-right : auto;
@@ -109,12 +112,13 @@ div.small-container {
     text-align  : center;
 }
 
-/* class for candidate name style */
+/* font for candidate name */
 @font-face {
     font-family : "HarryPotter";
     src         : url("../fonts/HARRYP__.TTF");
 }
 
+/* class for candidate name font and styling */
 div.name {
     color       : white;
     text-align  : center;
@@ -123,7 +127,7 @@ div.name {
     text-shadow : 2px 2px 10px #000000;;
 }
 
-/* div container */
+/* inner div container */
 div.container {
     background-color : #f6f6f6;
     border-radius    : 20px;
