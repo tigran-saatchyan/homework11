@@ -33,7 +33,7 @@
     <!-- Search bar start -->
     <div class="search-container">
         <form action="/search_result/" method="post">
-            <input id="search" type="text" placeholder="Name.." name="search">
+            <input id="search" type="text" placeholder="Name or Skill" name="search">
             <button type="submit"><i class="fa fa-search"></i></button>
         </form>
     </div>
@@ -46,7 +46,7 @@
     <div class="table">
         {% for skill in data %}
             <div class="row">
-                <a href="http://127.0.0.1:5000/candidates/{{ skill }}">
+                <a href="http://127.0.0.1:5000/candidates/{{ skill.lower() }}">
                     <div class="cell">{{ skill.title() }}</div>
                 </a>
             </div>

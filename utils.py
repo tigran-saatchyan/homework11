@@ -55,4 +55,14 @@ def get_candidates_by_skill(skill_name):
     return filter_by_skill
 
 
-get_candidates_by_skill('python')
+def get_skills_list():
+    skills = []
+
+    candidates = [
+        skills.extend(candidate["skills"].lower().split(", "))
+        for candidate in ALL_CANDIDATES
+    ]
+
+    unique_skill_list = sorted(list(set(skills)))
+
+    return unique_skill_list

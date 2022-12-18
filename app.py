@@ -26,13 +26,8 @@ def page_list():
 
 @app.route('/skill_list/')
 def page_skill_list():
-    skills = []
-    candidates = [
-        skills.extend(candidate["skills"].lower().split(", "))
-        for candidate in ALL_CANDIDATES
-    ]
-    unique_skill_list = sorted(list(set(skills)))
-    return render_template('skill_list.html', data=unique_skill_list)
+    skill_list = utils.get_skills_list()
+    return render_template('skill_list.html', data=skill_list)
 
 
 @app.route('/candidate/<int:candidate_id>/')
@@ -49,6 +44,7 @@ def page_candidate_by_skill(skill_name):
 
 @app.route('/search_result/', methods=['POST', 'GET'])
 def page_search_result():
+    skill_list = utils.get_skills_list()
     candidate_name_or_skill = None
     if request.method == 'POST':
         candidate_name_or_skill = request.form['search']
@@ -56,7 +52,10 @@ def page_search_result():
     if not candidate_name_or_skill:
         candidates = [{"error": "Name or Skill of candidate is required"}]
     else:
-        candidates = utils.get_candidates_by_name(candidate_name_or_skill)
+        if candidate_name_or_skill.lower() in skill_list:
+            candidates = utils.get_candidates_by_skill(candidate_name_or_skill)
+        else:
+            candidates = utils.get_candidates_by_name(candidate_name_or_skill)
 
     return render_template("search_result.html", data=candidates)
 
