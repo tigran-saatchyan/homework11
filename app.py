@@ -67,6 +67,7 @@ def page_candidate_by_skill(skill_name):
     return render_template("search_result.html", data=candidates)
 
 
+# todo: implement searching by skill part same as by candidate name part
 @app.route('/search_result/', methods=['POST'])
 def page_search_result():
     """
