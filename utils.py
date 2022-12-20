@@ -40,20 +40,17 @@ def get_candidates_by_name(candidate_name):
     :param candidate_name:  - candidate name or part of name
     :return:                - list of candidates by specified name
     """
-    filter_by_name = []
-    for candidate in ALL_CANDIDATES:
-        if candidate_name.lower().strip() in candidate["name"].lower():
-            filter_by_name.append(candidate)
-
-    if not filter_by_name:
-        filter_by_name.append(
-            {
-                "error": f"Candidate {candidate_name} is missing"
-            }
-        )
-    return filter_by_name
+    return [
+        candidate
+        for candidate in ALL_CANDIDATES if
+        candidate_name.lower().strip() in candidate["name"].lower()
+    ] or {
+        "error": f"Candidate {candidate_name} is missing"
+    }
 
 
+# todo: refactor same as get_candidates_by_name
+# todo: searching in skills string by part of skill name same as by_name
 def get_candidates_by_skill(skill_name):
     """
     Get candidates by skill name
