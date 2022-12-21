@@ -124,7 +124,15 @@ div.name {
     text-align  : center;
     font-size   : 90px;
     font-family : 'HarryPotter', cursive;
-    text-shadow : 2px 2px 10px #000000;;
+    text-shadow : 2px 2px 10px #000000;
+}
+
+/* class for candidate name font and styling */
+h2 {
+    color       : white;
+    font-size   : 40px;
+    font-family : 'HarryPotter', cursive;
+    text-shadow : 2px 2px 10px #000000;
 }
 
 /* inner div container */

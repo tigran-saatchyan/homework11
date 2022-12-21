@@ -27,12 +27,7 @@ def page_list():
     All candidate list page
     :return: - render_template('candidate_list.html', data=candidates)
     """
-    candidates = {
-        candidate["id"]: candidate["name"]
-        for candidate in ALL_CANDIDATES
-    }
-
-    return render_template('candidate_list.html', data=candidates)
+    return render_template('candidate_list.html', data=ALL_CANDIDATES)
 
 
 @app.route('/skill_list/')
@@ -60,36 +55,61 @@ def page_candidate_by_id(candidate_id):
 def page_candidate_by_skill(skill_name):
     """
     All candidate list with specified skill name
-    :param skill_name:  - specified skill name
+    :param skill_name:  - specified skill name or part
     :return: - render_template("search_result.html", data=candidates)
     """
     candidates = utils.get_candidates_by_skill(skill_name)
-    return render_template("search_result.html", data=candidates)
+    return render_template('candidate_list.html', data=candidates)
 
 
-# todo: implement searching by skill part same as by candidate name part
 @app.route('/search_result/', methods=['POST'])
 def page_search_result():
     """
     Search result page
     :return: render_template("search_result.html", data=candidates)
     """
-    skill_list = utils.get_skills_list()
-
+    by_skill_count = 0
+    by_name_count = 0
     candidate_name_or_skill = None
 
     if request.method == 'POST':
         candidate_name_or_skill = request.form['search']
 
     if not candidate_name_or_skill:
-        candidates = [{"error": "Name or Skill of candidate is required"}]
+        candidates_by_skill = candidates_by_name = [
+            {"error": "Name or Skill of candidate is required"}
+        ]
     else:
-        if candidate_name_or_skill.lower() in skill_list:
-            candidates = utils.get_candidates_by_skill(candidate_name_or_skill)
-        else:
-            candidates = utils.get_candidates_by_name(candidate_name_or_skill)
+        candidates_by_skill = utils.get_candidates_by_skill(
+            candidate_name_or_skill
+        )
 
-    return render_template("search_result.html", data=candidates)
+        candidates_by_name = utils.get_candidates_by_name(
+            candidate_name_or_skill
+        )
+
+    try:
+        candidates_by_name[0]['error']
+    except KeyError:
+        by_name_count = len(
+            candidates_by_name
+        )
+
+    try:
+        candidates_by_skill[0]['error']
+    except KeyError:
+        by_skill_count = len(
+            candidates_by_skill
+        )
+
+    return render_template(
+        "search_result.html",
+        candidates_by_name=candidates_by_name,
+        candidates_by_skill=candidates_by_skill,
+        by_name_count=by_name_count,
+        by_skill_count=by_skill_count
+    )
 
 
-app.run(debug=True)
+if __name__ == "__main__":
+    app.run(debug=True)

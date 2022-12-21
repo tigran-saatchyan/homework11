@@ -30,6 +30,7 @@
     <h3>
         {&emsp;&emsp;
         <a href="/">Back to Main Page</a>&emsp;&emsp;}-|-{&emsp;&emsp;
+        <a href="/candidate_list/">List of all Santa Candidates</a>&emsp;&emsp;}-|-{&emsp;&emsp;
         <a href="/skill_list/">List of all Skills</a>
         &emsp;&emsp;}
     </h3>
@@ -48,11 +49,11 @@
 <!-- Scrollable section start-->
 <section>
     <div class="table">
-        {% for id, candidate in data.items() %}
+        {% for candidate in data %}
             <div class="row">
-                <a href="/candidate/{{ id }}/">
-                    <div class="cell">{{ id }}</div>
-                    <div class="cell">{{ candidate }}</div>
+                <a href="/candidate/{{ candidate.id }}/">
+                    <div class="cell">{{ candidate.id }}</div>
+                    <div class="cell">{{ candidate.name }}</div>
                 </a>
             </div>
         {% endfor %}

@@ -52,7 +52,26 @@
 <!-- Scrollable section start-->
 <section>
     <div class="table">
-        {% for candidate in data %}
+        <h2>Candidates by name found: {{ by_name_count }}  </h2>
+        {% for candidate in candidates_by_name %}
+            {% if candidate['name'] %}
+                <div class="row">
+                    <a href="/candidate/{{ candidate.id }}/">
+                        <div class="cell">{{ candidate.id }}</div>
+                        <div class="cell">{{ candidate.name }}</div>
+                    </a>
+                </div>
+            {% else %}
+                <div class="row">
+                    <a href="/candidate_list/">
+                        <div class="cell">{{ candidate.error }}</div>
+                    </a>
+                </div>
+            {% endif %}
+        {% endfor %}
+
+        <h2>Candidates by skill found: {{ by_skill_count }} </h2>
+        {% for candidate in candidates_by_skill %}
             {% if candidate['name'] %}
                 <div class="row">
                     <a href="/candidate/{{ candidate.id }}/">
