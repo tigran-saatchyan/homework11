@@ -1,58 +1,17 @@
-{# todo:  use jinja inheritance to avoid code dublication in HTML #}
-{# todo:  add <em>, <del>, <mark> #}
-{# https://docs-python.ru/packages/modul-jinja2-python/nasledovanie-shablonov-jinja2/ #}
+{% extends 'base.html' %}
 
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Lesson 11. Homework</title>
+{% block title %}Lesson 11. Homework {% endblock %}
 
-    <!-- CSS stylesheets import -->
-    <link rel="stylesheet" type="text/css" href="/static/css/style.css">
-    <link rel="stylesheet" type="text/css" href="/static/css/snowflakes.css">
-    <link rel="stylesheet" type="text/css" href="/static/css/wave.css">
+{% block header_nav_bar %}
+    <h3>
+        {&emsp;&emsp;
+        <a href="/candidate_list/">List of all Santa Candidates</a>&emsp;&emsp;}-|-{&emsp;&emsp;
+        <a href="/skill_list/">List of all Skills</a>
+        &emsp;&emsp;}
+    </h3>
+{% endblock %}
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Montserrat&family=Roboto&family=Mountains+of+Christmas:wght@700&display=swap"
-          rel="stylesheet">
-
-    <!-- Search bar button icon -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-</head>
-<body>
-<!-- Fixed Header start-->
-<div class="center">
-    <header>
-
-        <h1>Ho-Ho-Homework</h1>
-        <hr>
-        <h3>
-            {&emsp;&emsp;
-            <a href="/candidate_list/">List of all Santa Candidates</a>&emsp;&emsp;}-|-{&emsp;&emsp;
-            <a href="/skill_list/">List of all Skills</a>
-            &emsp;&emsp;}
-        </h3>
-
-        <!-- Search bar start -->
-        <div class="search-container">
-            <form action="/search_result/" method="post">
-                <input id="search" type="text" placeholder="Name or Skill" name="search">
-                <button type="submit"><i class="fa fa-search"></i></button>
-            </form>
-        </div>
-        <!-- Search bar start -->
-
-    </header>
-    <!-- Fixed Header end-->
-</div>
-<!-- Scrollable section start-->
-<section>
+{% block content %}
     {% for candidate in data %}
         <div class="container">
             <div class="name">{{ candidate.name }}</div>
@@ -88,60 +47,7 @@
                     <span class="cell"><b>Bio: </b></span>
                     <span class="cell">{{ candidate.bio }}</span>
                 </div>
-
             </div>
         </div>
     {% endfor %}
-</section>
-<!-- Scrollable section end-->
-
-<!-- Snowflakes fall without JS start -->
-<div class="snowflakes" aria-hidden="true">
-    <div class="snowflake">
-        ❅
-    </div>
-    <div class="snowflake">
-        ❆
-    </div>
-    <div class="snowflake">
-        ❅
-    </div>
-    <div class="snowflake">
-        ❆
-    </div>
-    <div class="snowflake">
-        ❅
-    </div>
-    <div class="snowflake">
-        ❆
-    </div>
-    <div class="snowflake">
-        ❅
-    </div>
-    <div class="snowflake">
-        ❆
-    </div>
-    <div class="snowflake">
-        ❅
-    </div>
-    <div class="snowflake">
-        ❆
-    </div>
-    <div class="snowflake">
-        ❅
-    </div>
-    <div class="snowflake">
-        ❆
-    </div>
-</div>
-<!-- Snowflakes fall without JS end -->
-
-<!-- Wave background start -->
-<div>
-    <div class="wave"></div>
-    <div class="wave"></div>
-    <div class="wave"></div>
-</div>
-<!-- Wave background end -->
-</body>
-</html>
+{% endblock %}

@@ -1,52 +1,19 @@
-{# todo:  use jinja inheritance to avoid code dublication in HTML #}
-{# todo:  add <em>, <del>, <mark> #}
-{# https://docs-python.ru/packages/modul-jinja2-python/nasledovanie-shablonov-jinja2/ #}
+{% extends 'base.html' %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Skills List</title>
+{% block title %}
+    Skills List
+{% endblock %}
 
-    <!-- CSS stylesheets import -->
-    <link rel="stylesheet" type="text/css" href="/static/css/style.css">
-    <link rel="stylesheet" type="text/css" href="/static/css/snowflakes.css">
-    <link rel="stylesheet" type="text/css" href="/static/css/wave.css">
-
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Montserrat&family=Roboto&family=Mountains+of+Christmas:wght@700&display=swap"
-          rel="stylesheet">
-
-    <!-- Search bar button icon -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-</head>
-<body>
-<!-- Fixed Header start-->
-<header>
-    <h1>Ho-Ho-Homework</h1>
-    <hr>
+{% block header_nav_bar %}
     <h3>
         {&emsp;&emsp;
         <a href="/">Back to Main Page</a>&emsp;&emsp;}-|-{&emsp;&emsp;
         <a href="/candidate_list/">List of all Santa Candidates</a>
         &emsp;&emsp;}
     </h3>
+{% endblock %}
 
-    <!-- Search bar start -->
-    <div class="search-container">
-        <form action="/search_result/" method="post">
-            <input id="search" type="text" placeholder="Name or Skill" name="search">
-            <button type="submit"><i class="fa fa-search"></i></button>
-        </form>
-    </div>
-    <!-- Search bar start -->
-</header>
-<!-- Fixed Header end-->
-
-<!-- Scrollable section start-->
-<section>
+{% block content %}
     <div class="table">
         {% for skill in data %}
             <div class="row">
@@ -56,56 +23,4 @@
             </div>
         {% endfor %}
     </div>
-</section>
-<!-- Scrollable section end-->
-
-<!-- Snowflakes fall without JS start -->
-<div class="snowflakes" aria-hidden="true">
-    <div class="snowflake">
-        ❅
-    </div>
-    <div class="snowflake">
-        ❆
-    </div>
-    <div class="snowflake">
-        ❅
-    </div>
-    <div class="snowflake">
-        ❆
-    </div>
-    <div class="snowflake">
-        ❅
-    </div>
-    <div class="snowflake">
-        ❆
-    </div>
-    <div class="snowflake">
-        ❅
-    </div>
-    <div class="snowflake">
-        ❆
-    </div>
-    <div class="snowflake">
-        ❅
-    </div>
-    <div class="snowflake">
-        ❆
-    </div>
-    <div class="snowflake">
-        ❅
-    </div>
-    <div class="snowflake">
-        ❆
-    </div>
-</div>
-<!-- Snowflakes fall without JS end -->
-
-<!-- Wave background start -->
-<div>
-    <div class="wave"></div>
-    <div class="wave"></div>
-    <div class="wave"></div>
-</div>
-<!-- Wave background end -->
-</body>
-</html>
+{% endblock %}
